@@ -1,0 +1,16 @@
+spring:
+
+  cloud:
+    function:
+      definition: my-producer;consumer
+    stream:
+      kafka:
+        binder:
+          brokers: localhost:9092
+
+      bindings:
+        my-producer-out-0:
+          destination: first-topic
+        consumer-in-0:
+          destination: first-topic
+          content-type: application/json
